@@ -1,0 +1,86 @@
+﻿<html lang="pt-br">
+<body>
+    <!--Colocando o banner/imagem inicial-->
+    <section id="page-header" class="about-header">
+        <h2>#Bora conversar</h2>
+        <p><strong>Envie-nos uma mensagem, adoraríamos ouvir você</strong></p>
+    </section>
+
+    <!--Colocando as informações e o mapa-->
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>ENVIE UMA MENSAGEM</span>
+            <h2>Visite um dos nossos escritórios para entrar em contato conosco hoje</h2>
+            <h3>Escritório central</h3>
+            <div>
+                <li>
+                    <i class="fal fa-map"></i>
+                    <p>Av. da Saudade, 125 - Pte. Preta, Campinas - SP, 13041-670</p>
+                </li>
+
+                <li>
+                    <i class="far fa-envelope"></i>
+                    <p>contatopono@gmail.com</p>
+                </li> 
+
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <p>(19)12345-6789</p>
+                </li>
+
+                <li>
+                    <i class="far fa-clock"></i>
+                    <p>Segunda à Sábado: 8:am to 17:00pm</p>
+                </li>
+            </div>
+        </div>
+
+        <!--Colocando o google maps-->
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.954473512951!2d-47.055931!3d-22.915049999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cf3303ceff43%3A0xea485c60a4b21ef5!2sEscola%20SENAI%20Prof.%20Dr.%20Euryclides%20de%20Jesus%20Zerbini!5e0!3m2!1spt-BR!2sbr!4v1668540363054!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </section>
+
+    <!--Criando a caixa de mensagem-->
+    <section id="form-details">
+        <form action="https://api.staticforms.xyz/submit" method="post">            
+            <input type="hidden" name="accessKey" value="c385639d-c453-4abd-98a6-400be02851bb"> 
+            <input type="hidden" name="redirectTo" value="https://localhost:44399/Home/Contact"
+            <span>ENVIE UMA MENSAGEM</span>
+            <h2>Nós amamos ouvir você</h2>
+            <input type="text" name="name" placeholder="Seu nome">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="subject" placeholder="Assunto">
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Escreva aqui a mensagem"></textarea>
+
+            <button class="normal" name="submit">Enviar</button>
+        </form>
+
+        <!--Colocando a lista de integrantes-->
+        <div class="people">
+            <div>
+                <img src="~/img/people/1.png" alt="">
+                <p><span>Beatriz Morais</span> Desenvolvedora front-end <br> Phone: + 000 123 000 77 88 <br> Email: beatrizmorais.dev@gmail.com</p>
+            </div>
+
+            <div>
+                <img src="~/img/people/2.png" alt="">
+                <p><span>Elisa Ieks</span> Administrador de Banco de Dados <br> Phone: + 000 123 000 77 88 <br> Email: elisaieks.dev@gmail.com</p>
+            </div>
+
+
+            <div>
+                <img src="~/img/people/3.png" alt="">
+                <p><span>Gabriel Campopiano</span> Desenvolvedor mobile <br> Phone: + 000 123 000 77 88 <br> Email: bielcampopiano@gmail.com </p>
+            </div>
+
+            <div>
+                <img src="~/img/people/g.png" alt="">
+                <p><span>Gabriel Ferreira</span> Desenvolvedor back-end <br> Phone: + 000 123 000 77 88 <br> Email: Bielffonseca63@gmail.com </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<script src="~/js/script.js"></script>

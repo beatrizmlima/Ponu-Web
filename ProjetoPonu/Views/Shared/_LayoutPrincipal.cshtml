@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Ponu</title>
+    <link rel="icon" href="~/img/ico.png" type="image/png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    </link>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+
+<body>
+    <!--Criando a nav bar-->
+    <!--Colocando a logo-->
+    <section id="header">
+        <a href="#"><img src="~/img/logo.png" class="logo" alt=""></a>
+
+        <!--Colocando os nav link-->
+        <div>
+            <ul id="navbar">
+                <li><a class="@ViewBag.Inicial">@Html.ActionLink("Home","Index","Home")</a></li>
+                <li><a class="@ViewBag.ActiveProdutos">@Html.ActionLink("Produtos","Shop","Home")</a></li>
+                <li><a class="@ViewBag.ActiveBlog">@Html.ActionLink("Blog","Blog","Home")</a></li>
+                <li><a class="@ViewBag.ActiveContato">@Html.ActionLink("Contato","Contact","Home")</a></li>
+                <li><a class="@ViewBag.ActiveLogin">@Html.ActionLink("Login","Login","Home")</a></li>
+                <li id="lg-bag"><a href="/Home/cart"><i class="fa-solid fa-cart-shopping"></i> </a></li>
+                <li> <a id="close" href="/Home/cart"><i class="fa-solid fa-cart-shopping"></i> </a></li>
+            </ul>
+        </div>
+
+        <!--Nav bar responsiva / para mobile-->
+        <div id="mobile">
+            <a href="/Home/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    <div>
+        @RenderBody()
+    </div>
+    <!--Criando a caixinha de inscrição para newsletter-->
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Inscreva-se para promoções</h4>
+            <p>Cadastre seu email para receber o catálogo de produtos e <span>ofertas especiais</span></p>
+        </div>
+
+        <div class="form">
+            <input type="text" placeholder="Insira seu email">
+            <button class="normal">Inscreva-se</button>
+        </div>
+    </section>
+    <!--Criando o footer-->
+    <footer class="section-p1">
+        <div class="col">
+            <!--Criando cada coluna/divisão do footer-->
+            <img class="logo" src="~/img/logoFooter.png" alt="">
+            <h4>Contato</h4>
+            <!--Strong coloca o texto em negrito-->
+            <p><strong>Endereço:</strong> Av. da Saudade, 125 - Pte. Preta, Campinas - SP, 13041-670</p>
+            <p><strong>Telefone:</strong> +55 (19)3731-2840</p>
+            <p><strong>Horário de funcionamento:</strong> 7h00 - 18h00, Segunda - Sábado</p>
+
+
+            <div class="follow">
+                <h4>Siga-nós nas redes sociais</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>Sobre</h4>
+            <a href="#">Sobre nós</a>
+            <a href="#">Informações sobre frete</a>
+            <a href="#">Política de privacidade</a>
+            <a href="#">Termos & Condições</a>
+            <a href="#">Contate-nos</a>
+        </div>
+
+        <div class="col">
+            <h4>Minha conta</h4>
+            <a href="#">Inscreva-se</a>
+            <a href="#">Ver carrinho</a>
+            <a href="#">Minha lista</a>
+            <a href="#">Rastrear meu pedido</a>
+            <a href="#">Ajuda</a>
+        </div>
+
+        <div class="col install">
+            <h4>Instale nosso App</h4>
+            <p>Disponível na App Store e Google Play</p>
+            <div class="row">
+                <img src="~/img/pay/app.jpg" alt="">
+                <img src="~/img/pay/play.jpg" alt="">
+            </div>
+            <p>Serviços de pagamento aceitos</p>
+            <img src="~/img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>© 2022, Pono Ecommerce - Beatriz, Elisa, Gabriel Campopiano e Gabriel Ferreira</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+﻿@model Produto;
+
+<html lang="pt-br">
+<body>        
+    <!--Colocando o banner/imagem inicial-->
+    <section id="page-header" class="about-header">
+        <h2>#Vamos às compraaaaaaas</h2>
+        <p><strong>Não é só um cosmético, é um cosmético Pono!</strong></p>
+    </section>
+
+    <!--Criando a tabela dos produtos adicionados no carrinho-->
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>REMOVER</td>
+                    <td>IMAGEM</td>
+                    <td>PRODUTO</td>
+                    <td>PREÇO</td>
+                    <td>QUANTIDADE</td>
+                    <td>SUBTOTAL</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!--Se a ViewBag que é criada quando se clica no botão adicionar ao carrinho não é true, ou, a viewbag que é 
+                    alterada quando se clica em remover produto, não é false, o produto não existirá no carrinho
+                    (Possivel ponto de melhoria, pois isso não é dinâmico, funciona somente nesse caso)
+                -->
+                @if (ViewBag.AdcCarrinho == true && ViewBag.RemoverProduto != true)
+                {
+                    <tr>
+                        <!--Formulário que remove o produto do carrinho-->
+                        @using (Html.BeginForm("RemoverProduto", "Home")) {
+                        <td><button type="submit" class="removerProduto" id="removerProduto"><i class="far fa-times-circle"/></button></td>
+                        <td><img src="~/img/products/c1.jpg" alt=""></td>
+                        <td>@ViewBag.nome</td>
+                        <td>@ViewBag.preco</td>
+                        <td>
+                            <input id="quantidade" class="quantidade" name="quantidade" min="1" type="number" value="@ViewBag.quantidadeProduto" readonly>
+                                                    </td>
+
+                        <td>@ViewBag.precoFinal</td>}
+                    </tr>
+                }                
+            </tbody>
+        </table>
+    </section>
+
+    <!--Criando o input de aplicar cupom e total-->
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Aplicar cupom</h3>
+            <div>
+                <input type="text" placeholder="Insira o cupom">
+                <button class="normal">Aplicar</button>
+            </div>
+        </div>
+
+        <div id="subtotal">
+            <h3>Carrinho</h3>
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>@ViewBag.precoFinal</td>
+                </tr>
+
+                <tr>
+                    <td>Frete</td>
+                    <td>Grátis</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>@ViewBag.precoFinal</strong></td>
+                </tr>
+            </table>
+
+            <button class="normal">Finalizar compra</button>
+        </div>
+    </section>
+
+  
+</body>
+</html>
+<script src="~/js/script.js"></script>

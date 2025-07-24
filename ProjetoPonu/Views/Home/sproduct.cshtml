@@ -1,0 +1,169 @@
+﻿@model Produto;
+<html lang="pt-br">
+<body>
+        <!--Criando a página indiviual do produto-->
+    <section id="prodetails" class="section-p1">
+         <!--Colocando as imagens na página-->
+        <div class="single-pro-image">
+            <!--Se, sem estoque, muda a imagem-->
+            @if (ViewBag.QuantidadeProduto > 0)
+            {
+                <img src="~/img/products/c1.jpg" width="100%" id="MainImg" alt="">
+            }else{
+                <img src="~/img/products/c1Out.jpg" width="100%" id="MainImg" alt="">
+            }
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="~/img/products/c1.jpg" width="100%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="~/img/products/c2.jpg" width="100%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="~/img/products/c3.jpg" width="100%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="~/img/products/c4.jpg" width="100%" class="small-img" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!--Colocando os textos na página-->
+        <div class="single-pro-details">
+            <h6>Home / boca</h6>
+            <h4>Gel Dental Clareador Carvão </h4>
+            <h2>R$36,70</h2>
+            <!--Criando uma caixinha para selecionar tamanho-->
+            <select>
+                <option>Selecione o tamanho</option>
+                <option>30g</option>
+                <option>50g</option>
+                <option>90g</option>
+                <option>120g</option>
+            </select>
+            <!--Insere a quantidade de produtos no banco-->
+            <h3>Quantidade em Estoque: @ViewBag.QuantidadeProduto</h3>
+
+            <!--Criando uma caixinha para selecionar quantidade-->
+
+            <!--Formulário que envia o produto para o carrinho-->
+            @using (Html.BeginForm("AdicionarCarrinho", "Home")) {
+                <input min="1" type="number" value="1" name="quantidade" class="quantidade" id="quantidade">
+                <button class="normal">Adicione ao carrinho</button>
+            }
+            <h4>Descrição</h4>
+            <span>
+                Eu ouvi dentes brancos? Isso mesmo. Diga “xis” para esse refrescante gel dental a base da mais cristalina aloe combinada com o desintoxicante e clareador carvão vegetal.
+                Hálito puro? Solte a voz com uma boa dose de energia do mentolado e prazeroso óleo de hortelã pimenta.
+                É faxina que você quer? Os fascinantes óleos de copaíba e tea tree vão exterminar os germes e proteger suas gengivas e esmalte na escovação.
+                Uma explosão de sabor e saúde para sua higiene bucal!
+            </span>
+        </div>
+    </section>
+
+    <!--Colocando mais produtos na tela-->
+    <section id="product1" class="section-p1">
+        <h2>Mais produtos como esse</h2>
+        <p>Outras pessoas que compraram esse, também viram</p>
+        <div class="pro-container">
+            <!--Produto 1-->
+            <div class="pro">
+                <img src="~/img/products/a1.jpg" alt="">
+                <div class="des"> <!--Descrição dos produtos e suas categoria-->
+                    <span>cabelo</span>
+                    <h5>Combo Nutrição Capilar</h5>
+                    <div class="star"> <!--Classificação dos produtos / estelinhas-->
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>R$184,00</h4> <!--Preço do produto-->
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> <!--Colocando o icone de adicionar carrinho-->
+            </div>
+
+            <!--Produto 2-->
+            <div class="pro">
+                <img src="~/img/products/d1.jpg" alt="">
+                <div class="des"> <!--Descrição dos produtos e suas categoria-->
+                    <span>rosto</span>
+                    <h5>Combo Facial Pele Mista</h5>
+                    <div class="star"> <!--Classificação dos produtos / estelinhas-->
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>R$215,00</h4> <!--Preço do produto-->
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> <!--Colocando o icone de adicionar carrinho-->
+            </div>
+
+            <!--Produto 3-->
+            <div class="pro">
+                <img src="~/img/products/e1.jpg" alt="">
+                <div class="des"> <!--Descrição dos produtos e suas categoria-->
+                    <span>rosto</span>
+                    <h5>Hidratante Facial Orvalho</h5>
+                    <div class="star"> <!--Classificação dos produtos / estelinhas-->
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>R$118,00</h4> <!--Preço do produto-->
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> <!--Colocando o icone de adicionar carrinho-->
+            </div>
+
+            <!--Produto 4-->
+            <div class="pro">
+                <img src="~/img/products/o7.jpg" alt="">
+                <div class="des"> <!--Descrição dos produtos e suas categoria-->
+                    <span>vegetal</span>
+                    <h5>Óleo vegetal de jojoba</h5>
+                    <div class="star"> <!--Classificação dos produtos / estelinhas-->
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>R$85,40</h4> <!--Preço do produto-->
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> <!--Colocando o icone de adicionar carrinho-->
+            </div>
+        </div>
+    </section>
+     <!--Quando clicar em uma das miniaturas de produto ela passa a ser a imagem grandona-->
+     <script>
+         var MainImg = document.getElementById("MainImg")
+         var smallimg = document.getElementsByClassName("small-img")
+
+         smallimg[0].onclick = function(){
+            MainImg.src = smallimg[0].src;
+         }
+
+         smallimg[1].onclick = function(){
+            MainImg.src = smallimg[1].src;
+         }
+
+         smallimg[2].onclick = function(){
+            MainImg.src = smallimg[2].src;
+         }
+
+         smallimg[3].onclick = function(){
+            MainImg.src = smallimg[3].src;
+         }
+     </script>
+
+</body>
+</html>
+<script src="~/js/script.js"></script>
